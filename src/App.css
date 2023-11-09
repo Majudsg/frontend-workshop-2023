@@ -24,6 +24,26 @@
     transition: all 0.1s ease-in-out;
 }
 
+.card > ul{
+    display: none;
+    list-style-type: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.card:hover > ul{
+    display:block;
+}
+
+.card > ul > li{
+    font-family: Inter, Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #010101;
+    border-radius: 0.25rem;
+    padding: 0.25rem;
+    color: #f8f8f8;
+    max-width: fit-content;
+    margin: 0.1rem;
+}
+
 .card:hover > img{
     box-shadow: 0.25rem 0.25rem #fea4ca;
     translate: -0.25rem -0.25rem;
