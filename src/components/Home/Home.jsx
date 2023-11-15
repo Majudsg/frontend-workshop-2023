@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import './App.css'
-import Card from './components/Card/Card';
+import Card from '../Card/Card';
 
 export default function Home() {
   const [items, setItems] = useState([])
