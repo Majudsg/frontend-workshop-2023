@@ -10,34 +10,34 @@ export default function Home() {
     const response = await fetch(apiUrl)
 
     const body = await response.json()
-    console.log(body);
 
-const results = body.results.map(function(element) {
-  return {
-    name: element.name,
-    image: element.image,
-    tags: [
-      `Status: ${element.status}`,
-      `Species: ${element.species}`,
-      `Origin: ${element.origin.name}`,
-      `Episodes: ${element.episode.length}`
-    ]
-  }
-})
+    const results = body.results.map(function (element) {
+      return {
+        id: element.id,
+        name: element.name,
+        image: element.image,
+        tags: [
+          `Status: ${element.status}`,
+          `Species: ${element.species}`,
+          `Origin: ${element.origin.name}`,
+          `Episodes: ${element.episode.length}`
+        ]
+      }
+    })
 
     setItems(results)
   }
 
-useEffect(function () {
-  carregarDadosApi()
-}, [])
+  useEffect(function () {
+    carregarDadosApi()
+  }, [])
 
   return (
     <>
-    <div className="cards">
-      {items.map(function (element) {
-        return <Card item={element} />
-      })}
+      <div className="cards">
+        {items.map(function (element) {
+          return <Card item={element} />
+        })}
       </div>
     </>
   )
